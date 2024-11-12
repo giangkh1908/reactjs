@@ -1,7 +1,22 @@
- @import '@styles/mixin.module.scss';
- .btn { 
-   @include btn(30px, 30px, #fff, 0px);
- }
- .btn2 { 
-   @include btn(44px, 44px, #fff, 50%);
- }
+@use '../../assets/styles/mixin.module.scss' as mixin;
+
+.btn {
+  @include mixin.btn(176px, 42px, #333, 3px);
+  color: #fff;
+  font-size: 14px;
+  font-weight: 300;
+  //  padding: 13px 45px;
+  cursor: pointer;
+
+  &:hover {
+    background-color: transparent;
+    color: #333;
+    border: 1px solid #333;
+    transition: background-color 300ms;
+  }
+
+}
+
+//  .btn2 { 
+//    @include mixin.btn(44px, 44px, #fff, 50%);
+//  }

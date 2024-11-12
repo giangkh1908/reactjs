@@ -1,18 +1,13 @@
-import MainLayout from '@component/Layout/Layout'
-import MyHeader from '@component/Header/Header'
-import MyFooter from '@component/Footer/Footer'
-import MyButton from './components/Button/Button';
+
+import Homepage from '@components/HomePage/HomePage';
+import Info from '@components/Info/Info';
 
 
 function App() {
   return (
     <>
-      <MainLayout>
-        {/* <MyHeader />
-        Content
-        <MyFooter /> */}
-        <MyButton />
-      </MainLayout>
+      <Homepage />
+      <Info />
     </>
   );
 }
