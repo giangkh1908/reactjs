@@ -7,22 +7,22 @@ import heartIcon from '@icon/svgs/heartIcon.svg';
 import cartIcon from '@icon/svgs/cartIcon.svg';
 
 function MyHeader() {
-
-    const { containerBoxIcon, containerMenu, containerHeader, containerBox, container } = styles;
+    const { containerBoxIcon, containerMenu, containerHeader, containerBox, container, menu } = styles;
     return (
         <div className={container}>
             <div className={containerHeader}>
                 <div className={containerBox}>
                     <div className={containerBoxIcon}>
                         {
-                            dataBoxIcon.map((item) => {
-                                return <BoxIcon type={item.type} href={item.href} />
-                            })}
+                            dataBoxIcon.map((item, index) => {
+                                return <BoxIcon key={index} type={item.type} href={item.href}  className={menu} />
+                            })
+                        }
                     </div>
                     <div className={containerMenu}>
                         {
-                            dataMenu.slice(0, 3).map((item) => {
-                                return <Menu content={item.content} href={item.href} />
+                            dataMenu.slice(0, 3).map((item, index) => {
+                                return <Menu key={index} content={item.content} href={item.href} className={menu}  />
                             })
                         }
                     </div>
@@ -35,8 +35,8 @@ function MyHeader() {
                 <div className={containerBox}>
                     <div className={containerMenu}>
                         {
-                            dataMenu.slice(3, dataMenu.length).map((item) => {
-                                return <Menu content={item.content} href={item.href} />
+                            dataMenu.slice(3, dataMenu.length).map((item, index) => {
+                                return <Menu key={index + 3} content={item.content} href={item.href} />
                             })
                         }
                     </div>
@@ -45,7 +45,6 @@ function MyHeader() {
                         <img width={26} height={26} src={heartIcon} alt="" />
                         <img width={26} height={26} src={cartIcon} alt="" />
                     </div>
-
                 </div>
             </div>
         </div>
