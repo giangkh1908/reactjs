@@ -15,14 +15,14 @@ function MyHeader() {
                     <div className={containerBoxIcon}>
                         {
                             dataBoxIcon.map((item, index) => {
-                                return <BoxIcon key={index} type={item.type} href={item.href}  className={menu} />
+                                return <BoxIcon key={index} type={item.type} href={item.href} className={menu} />
                             })
                         }
                     </div>
                     <div className={containerMenu}>
                         {
                             dataMenu.slice(0, 3).map((item, index) => {
-                                return <Menu key={index} content={item.content} href={item.href} className={menu}  />
+                                return <Menu key={index} content={item.content} href={item.href} className={menu} />
                             })
                         }
                     </div>

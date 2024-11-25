@@ -11,7 +11,7 @@ function Info() {
         <MainLayout>
             <div className={container}>
                 {dataInfo.map((item) => {
-                    return <InfoCard content={item.title} des={item.descripstion} src={item.src}/>;
+                    return <InfoCard content={item.title} des={item.descripstion} src={item.src} />;
                 })}
             </div>
         </MainLayout>
