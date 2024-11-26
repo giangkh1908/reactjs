@@ -4,13 +4,19 @@ import styles from './styles.module.scss';
 import Info from '@components/Info/Info';
 import AdvanceHeadling from '@components/AdvanceHeadling/AdvanceHeadling';
 import HeadingListProduct from '@components/HeadingListproduct/HeadingListProduct';
-
+import { getProducts } from '@/apis/productService';
+import { useEffect } from 'react';
 
 function Homepage() {
-    const { container } = styles;
+    // const { container } = styles;
+
+    useEffect(() => {
+        getProducts();
+    }, []);
+
     return (
         <div>
-            <div className={container}>
+            <div>
                 <MyHeader />
                 <Banner />
                 <Info />
