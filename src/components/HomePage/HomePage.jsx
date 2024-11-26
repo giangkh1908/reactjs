@@ -8,15 +8,16 @@ import { getProducts } from '@/apis/productService';
 import { useEffect } from 'react';
 import PopularProduct from '@components/PopularProduct/PopularProduct';
 import { useState } from 'react';
+import SaleHomePage from '@components/SaleHomePage/SaleHomePage';
 
 function Homepage() {
-   
+
     const [listProducts, setListProducts] = useState([]);
     useEffect(() => {
         getProducts().then(res => {
             setListProducts(res.contents);
         });
-        
+
     }, []);
     // console.log(listProducts, 'listProducts');
     return (
@@ -26,8 +27,9 @@ function Homepage() {
                 <Banner />
                 <Info />
                 <AdvanceHeadling />
-                <HeadingListProduct data={listProducts.slice(0, 2)}/>
-                <PopularProduct data={listProducts.slice(2, 10)}/>
+                <HeadingListProduct data={listProducts.slice(0, 2)} />
+                <PopularProduct data={listProducts.slice(2, 10)} />
+                <SaleHomePage />
             </div>
         </div>
     );
