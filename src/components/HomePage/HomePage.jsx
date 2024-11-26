@@ -6,14 +6,19 @@ import AdvanceHeadling from '@components/AdvanceHeadling/AdvanceHeadling';
 import HeadingListProduct from '@components/HeadingListproduct/HeadingListProduct';
 import { getProducts } from '@/apis/productService';
 import { useEffect } from 'react';
+import PopularProduct from '@components/PopularProduct/PopularProduct';
+import { useState } from 'react';
 
 function Homepage() {
-    // const { container } = styles;
-
+   
+    const [listProducts, setListProducts] = useState([]);
     useEffect(() => {
-        getProducts();
+        getProducts().then(res => {
+            setListProducts(res.contents);
+        });
+        
     }, []);
-
+    // console.log(listProducts, 'listProducts');
     return (
         <div>
             <div>
@@ -21,7 +26,8 @@ function Homepage() {
                 <Banner />
                 <Info />
                 <AdvanceHeadling />
-                <HeadingListProduct />
+                <HeadingListProduct data={listProducts.slice(0, 2)}/>
+                <PopularProduct data={listProducts.slice(2, 10)}/>
             </div>
         </div>
     );
