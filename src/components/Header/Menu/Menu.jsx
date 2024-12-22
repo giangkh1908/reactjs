@@ -1,9 +1,9 @@
 import styles from "../styles.module.scss";
 
-function Menu({ content, href }) {  // Destructure props here
+function Menu({ content, href, setIsOpen }) {  // Destructure props here
     const { menu } = styles;
     return (
-        <div className={menu}>{content}</div>
+        <div className={menu} onClick={() => setIsOpen(true)}>{content}</div>
     );
 }
 
